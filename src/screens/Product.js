@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
 	productDesc: {
 		color: colors.text.secondary,
 		fontSize: 17,
+		lineHeight: 24,
 	},
 	orderBtn: {
 		flex: 2,

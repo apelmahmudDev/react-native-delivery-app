@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
 		fontSize: 17,
 		fontWeight: "400",
 		textAlign: "center",
+		lineHeight: 24,
 		color: colors.text.secondary,
 	},
 	orderBtn: {
