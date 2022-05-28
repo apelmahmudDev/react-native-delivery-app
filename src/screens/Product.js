@@ -10,6 +10,8 @@ import React from "react";
 import { colors } from "../theme/colors";
 import { spacing } from "../theme/spacing";
 import { FontAwesome } from "@expo/vector-icons";
+import { EvilIcons } from "@expo/vector-icons";
+import { HeartSvg } from "../svg";
 
 export default function Product() {
 	return (
@@ -32,9 +34,15 @@ export default function Product() {
 					other kinds of food, such as soups, sandwiches and wraps; it can also
 					be grilled.
 				</Text>
-				<Pressable style={styles.orderBtn}>
-					<Text style={styles.btnText}>Add To Cart</Text>
-				</Pressable>
+				<View style={styles.actionsContainer}>
+					<View style={styles.wishlist}>
+						<HeartSvg />
+					</View>
+					<Pressable style={styles.orderBtn}>
+						<EvilIcons name="cart" size={28} color="white" />
+						<Text style={styles.btnText}>Add To Cart</Text>
+					</Pressable>
+				</View>
 			</View>
 		</ScrollView>
 	);
@@ -88,5 +96,38 @@ const styles = StyleSheet.create({
 	productDesc: {
 		color: colors.text.secondary,
 		fontSize: 17,
+	},
+	orderBtn: {
+		flex: 2,
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "center",
+		height: 45,
+		paddingHorizontal: spacing[5],
+		backgroundColor: colors.primaryBtn,
+		borderRadius: spacing[2],
+	},
+	btnText: {
+		marginLeft: spacing[1],
+		color: colors.text.white,
+		fontSize: 15,
+		fontWeight: "600",
+		textTransform: "uppercase",
+	},
+	actionsContainer: {
+		marginTop: spacing[7],
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+	},
+	wishlist: {
+		height: 45,
+		borderWidth: 1,
+		borderColor: "#D9D0E3",
+		alignItems: "center",
+		justifyContent: "center",
+		padding: spacing[5],
+		borderRadius: spacing[2],
+		marginRight: spacing[5],
 	},
 });
