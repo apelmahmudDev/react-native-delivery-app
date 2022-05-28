@@ -12,7 +12,7 @@ import { colors } from "../theme/colors";
 import { IconSvg, LogoSvg } from "../svg";
 import { spacing } from "../theme/spacing";
 
-export default function Home() {
+export default function Home({ navigation }) {
 	return (
 		<SafeAreaView style={styles.container}>
 			<StatusBar />
@@ -26,7 +26,10 @@ export default function Home() {
 					When placing an order, select the option “Contactless delivery” and
 					the courier will leave your order at the door.
 				</Text>
-				<Pressable style={styles.orderBtn}>
+				<Pressable
+					onPress={() => navigation.navigate("Product")}
+					style={styles.orderBtn}
+				>
 					<Text style={styles.btnText}>Order Now</Text>
 				</Pressable>
 				<Text style={styles.dismiss}>Dismiss</Text>
